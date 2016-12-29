@@ -1,0 +1,73 @@
+#!/bin/bash
+#
+IFS=$'\n'
+# define color that used in this script
+orange=$(echo -en "\e[33m")
+normal=$(echo -en "\e[0m")
+green=$(echo -en "\e[32m")
+lightred=$(echo -en "\e[91m")
+#
+#check for dependencies 
+type sponge &>/dev/null
+if [ "$?" != "0" ] ; then 
+    exit
+fi
+## check for input argument 
+#
+file=$1
+if [ -n "$1" ]
+then	
+    encode=$(file -bi "$file"|cut -d";" -f2)
+    case $encode in 
+	#check if they are utf skip them and else state change them to utf
+	*[uU][tT][fF]*)
+	echo "${orange}skiping $file..."
+	echo "$normal"
+	exit 
+	;;
+    *)
+	echo "${green}Fix $file..."
+	echo "$normal"
+	iconv -f WINDOWS-1256 -t utf-8 "$file"  | sponge "$file"  > /dev/null
+	exit
+	;;
+esac
+fi
+# End of Input check
+# get list of subtitile files
+files=$(ls ./*srt ./*SRT 2>/dev/null)
+#
+##
+# check files if it is empty then exit ;
+if [ -z "$files" ]
+then 
+    echo "${lightred}There is no subtitle !"
+    echo "${lightred}Leaving.."
+    echo -n "$normal"
+    exit 2
+fi
+#
+# #
+#
+for file in $files
+do 
+    encode=$(file -bi "$file"|cut -d";" -f2-)
+    case $encode in 
+	#check if they are utf skip them and else state change them to utf
+	*[uU][tT][fF]*)
+	echo "${orange}skiping $file..."
+
+	continue
+	;;
+    *)
+	echo "${green}Fix $file..."
+	iconv -f WINDOWS-1256 -t utf-8 "$file"  | sponge  "$file"  > /dev/null
+	;;
+esac
+  done
+  #
+  #
+  echo -n "$normal"
+  echo "Done!"
+  echo -en "\e[1mFinish \e[0m"
+  echo "$normal"
