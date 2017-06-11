@@ -9,13 +9,14 @@ lightred=$(echo -en "\e[91m")
 #
 #check for dependencies 
 type sponge &>/dev/null
-if [ "$?" != "0" ] ; then 
+if [[ "$?" != "0" ]] ; then 
+    echo "Please install moreutils package."
     exit
 fi
 ## check for input argument 
 #
 file=$1
-if [ -n "$1" ]
+if [[ -n "$1" ]]
 then	
     encode=$(file -bi "$file"|cut -d";" -f2)
     case $encode in 
@@ -39,7 +40,7 @@ files=$(ls ./*srt ./*SRT 2>/dev/null)
 #
 ##
 # check files if it is empty then exit ;
-if [ -z "$files" ]
+if [[ -z "$files" ]]
 then 
     echo "${lightred}There is no subtitle !"
     echo "${lightred}Leaving.."
