@@ -1,12 +1,8 @@
 # Welcome to Persian Subtitle Fixer
+A Bash script to change the unicode of Farsi/Persian subtitle to UTF-8 unicode. 
 
-`sub-fixer` saved the subtitles same name as you give it. 
+این برنامه برای مشکل انکودینگ زیرنویس های فارسی ساخته شده است. نحوه استفاده در ادامه توضیح داده شده است:
 
-first download sub-fixer and change the premission by below command: 
-
-`chmod 755 sub-fixer`
-
-Now, Everything is ready !
 # Dependencies 
 * moreutils 
 
@@ -21,7 +17,12 @@ For Fedora Fans :
 Other RedHat based OSs: 
 
 `# yum install moreutils`
+# Download or Clone
+Now download sub-fixer and change the premission by below command: 
 
+`chmod 755 sub-fixer`
+
+Now, Everything is ready !
 # How to use this script ?
 Actually there is two way : 
 * *First Way*  fix all subtitle in your directory , `cd` to your specific directory you want and execute sub-fixer without any parameter:
