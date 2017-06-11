@@ -1,7 +1,7 @@
 # Welcome to Persian Subtitle Fixer
 A Bash script to change the unicode of Farsi/Persian subtitle to UTF-8 unicode. 
 
-این برنامه برای مشکل انکودینگ زیرنویس های فارسی ساخته شده است. نحوه استفاده در ادامه توضیح داده شده است:
+این برنامه برای مشکل انکودینگ زیرنویس های فارسی ساخته شده است. نحوه استفاده در ادامه توضیح داده شده است
 
 # Dependencies 
 * moreutils 
