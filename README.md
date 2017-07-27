@@ -59,8 +59,7 @@ sub-fixer batman-1080.srt
 cd Downloads/Batman-vs-Superman/
 ls 
 batman-480.srt batman-720.srt batman-1080.srt
-sub-fixer  
-
+sub-fixer
 ```
 </div>
 
