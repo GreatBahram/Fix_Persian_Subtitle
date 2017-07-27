@@ -32,7 +32,7 @@
 
 `chmod 755 sub-fixer`
 
-`ln -sf \`pwd\`/sub-fixer /usr/bin/sub-fixer`
+`ln -sf $(pwd)/sub-fixer /usr/bin/sub-fixer`
 </div>
 # نحوه استفاده:
 
