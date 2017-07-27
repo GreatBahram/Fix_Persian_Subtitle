@@ -1,36 +1,46 @@
-# Welcome to Persian Subtitle Fixer
-A Bash script to change the unicode of Farsi/Persian subtitle to UTF-8 unicode. 
+<div dir="rtl">
+#مشکل چیه ؟
 
-این برنامه برای مشکل انکودینگ زیرنویس های فارسی ساخته شده است. نحوه استفاده در ادامه توضیح داده شده است
+خب مشکل از اونجا شروع میشه که وقتی مترجم عزیز میخواد زیرنویسش رو ذخیره کنه، انکدی(Encode) رو که باید انتخاب کنه درست انتخاب نمی کنه. برای آشنایی بیشتر با اندکینگ به این لینک رجوع کنید. نتیجه اش اینه که وقتی من و شما که می خواهیم تو سیستم های مختلف زیرنویس رو ببینیم سیستم نمی تونه تخشیص بده که اندک این زیرنویس چیه و در نتیجه چیزای خرچنگ قورباغه ای می بینیم.
 
-# Dependencies 
-* moreutils 
+برای کسایی که توی لینوکس اومدن این مشکل همیشه وجود داره و برای درست کردنشم هم من اسکریپت پایینو نوشتم.
 
-For Ubuntu Fans : 
+#پیش نیازها:
+۱. یه برنامه خیلی ساده به اسم sponge استفاده شده که توی پکیج moreutils قرار داره.چطور توی اوبونتو نصب اش کنم ؟
+
 
 `# apt-get install moreutils`
 
-For Fedora Fans : 
 
-`# dnf install moreutils`
+#نصب خود برنامه
 
-Other RedHat based OSs: 
+برای نصب این برنامه کافیه دستور زیر رو کپی کنید و توی ترمینالتون اجرا کنید : 
+`git clone https://github.com/GreatBahram/Fix_Persian_Subtitle`
 
-`# yum install moreutils`
-# Download or Clone
-Now download sub-fixer and change the premission by below command: 
+این دستور اسکرپت رو کپی می کنه توی سیستمتون و تنها کاری که میمونه اینه بهش مجوز اجرا شدن بدیم و یه جایی کپیش کنیم که همیشه تو ترمینال قابل دسترسی باشه: 
+
+‍`cd Fix_Persian_Subtitile`
 
 `chmod 755 sub-fixer`
 
-Now, Everything is ready !
-# How to use this script ?
-Actually there is two way : 
-* *First Way*  fix all subtitle in your directory , `cd` to your specific directory you want and execute sub-fixer without any parameter:
+`ln -sf `pwd`/sub-fixer /usr/bin/sub-fixer`
+#نحوه استفاده:
+
+این برنامه رو میشه دوجور استفاده کرد:
+
+*اول اینکه بگیم بهش بگیم فلان زیر نویس رو درست کن: که چک میکنه اگه مشکل داشته باشه،‌ فقط اون زیرنویس رو درست می کنه:‌
+
+
+ `$ sub-fixer [Name-of-Your-Subtile]` 
+ 
+```
+cd Download/Batman-vs-Superman/
+sub-fixer batman-1080.srt
+```
+*دومین روش همه رو باهم: برای اینکار به دایرکتوری مورد نظر میریم و برنامه رو اجرا می کنیم و به صورت خودکار همه فایل های srt رو چک می کنه اگه هرکدوم مشکلی داشته باشن درستشون می کنه 
 
  `$ sub-fixer `
 
-
-##Example: 
 ```
 cd Downloads/Batman-vs-Superman/
 ls 
@@ -38,16 +48,6 @@ batman-480.srt batman-720.srt batman-1080.srt
 sub-fixer  
 
 ```
-sub-fixer start search for all srt files and check if they are n't utf-8 encode change them to utf-8
 
-***
- 
-* *Second Way* , execute command for specific subtile : 
 
- `$ sub-fixer [Name-of-Your-Subtile]` 
-
-## Example: 
-```
-cd Download/Batman-vs-Superman/
-sub-fixer batman-1080.srt
-```
+</div>
